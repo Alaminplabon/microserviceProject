@@ -2,12 +2,12 @@
 
 namespace Catalog.API.Context
 {
-    public class CalalogDbContext : ApplicationDbContext
+    public class CatalogDbContext : ApplicationDbContext
     {
         static IConfiguration configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", true, true).Build();
         static string connectionString = configuration.GetConnectionString("Catalog.API");
         static string databaseName = configuration.GetValue<string>("DatabaseName");
-        public CalalogDbContext() : base(connectionString, databaseName)
+        public CatalogDbContext() : base(connectionString, databaseName)
         {
         }
     }
